@@ -1,0 +1,19 @@
+#object{
+    border: solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    transition: 0.5s;
+    animation: bounce 0.2s linear 5s infinite;
+}
+
+@keyframes bounce {
+    0%{
+        transform: y(0);
+    }
+    100%{
+        transform: x(100);
+    }
+}

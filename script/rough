@@ -1,0 +1,34 @@
+const showPassChoice = (vehicle) => {
+    let dailyPass = new DailyPass(vehicle)
+    let montlyPass = new MonthlyPass(vehicle)
+    let yearlyPass = new YearlyPass(vehicle)
+
+    let passChoice = document.getElementById('passChoice')
+    let button = document.createElement("INPUT")
+    button.setAttribute('type', "button")
+    button.value = "Daily : " + dailyPass.price
+    button.addEventListener('click', () => {
+        pass.push(dailyPass)
+        dailyPass.print()
+    })
+    passChoice.appendChild(button)
+
+    button = document.createElement("INPUT")
+    button.setAttribute('type', "button")
+    button.value = "Monthly : " + montlyPass.price
+    button.addEventListener('click', () => {
+        pass.push(montlyPass)
+        montlyPass.print()
+    })
+    passChoice.appendChild(button)
+
+    button = document.createElement("INPUT")
+    button.setAttribute('type', "button")
+    button.value = "Daily : " + yearlyPass.price
+    button.addEventListener('click', () => {
+        pass.push(yearlyPass)
+        yearlyPass.print()
+    })
+    passChoice.appendChild(button)
+
+}

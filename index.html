@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="./script/app.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>SKIT PARKING SYSTEM</h1>
+    </header>
+
+    <form id="userForm">
+        <fieldset>
+            <h2>User Registration</h2>
+            <label for="userName">Name:</label>
+            <input type="text" id="userName" placeholder="Name" pattern="[A-Za-z ]+" required/> 
+
+            <label for="userContact">Contact No.:</label>
+            <input type="text" id="userContact" placeholder="Contact No." pattern="[0-9]{10}" required/>
+
+            <label for="userRole">Member Role:</label>
+            <select id="userRole" required>
+                <option disabled selected>-- Select --</option>
+                <option value="faculty">Faculty</option>
+                <option value="student">Student</option>
+            </select>
+
+            <input type="submit" id="userSubmitBtn" name="Submit"/>
+        </fieldset>
+    </form>
+
+    <form id="vehicleForm">
+        <fieldset>
+            <h2>Vehicle Details</h2>
+            <label for="number">Registration No.:</label>
+            <input type="text" id="number" placeholder="Registration No." pattern="[A-Z0-9]+" required/>
+
+            <label for="vehicleType">Type of Vehicle:</label>
+            <select id="vehicleType" required>
+                <option disabled selected>-- Select --</option>
+                <option value="cycle">Bicycle</option>
+                <option value="motorcycle">Motorcycle</option>
+                <option value="car">Car</option>
+            </select>
+
+            <input type="submit" id="vehicleSubmitBtn" name="Submit"/>
+        </fieldset>
+    </form>
+
+    <form id="passChoiceForm">
+        <fieldset>
+            <h2>Pass Choice</h2>
+            <div id="passChoice"></div>
+        </fieldset>
+    </form>  
+
+    <div id="ticket"></div>
+
+    <footer>
+        &copy; Copyright 2023
+    </footer>
+
+    <script>
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Collapse the fieldset in the form
+                const fieldset = this.querySelector('fieldset');
+                fieldset.classList.add('collapsed');
+            });
+        });
+    </script>
+</body>
+</html>
