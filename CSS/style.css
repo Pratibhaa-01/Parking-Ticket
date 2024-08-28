@@ -1,9 +1,10 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    box-sizing: border-box;
 }
 
-header{
+header {
     background-color: #414770;
     text-align: center;
     color: #fff;
@@ -11,18 +12,18 @@ header{
     font-weight: bold;
 }
 
-body h2{
+body h2 {
     text-align: center;
     margin: 5px;
 }
 
-form{
+form {
     width: 600px;
     margin: auto;
-    padding: 20px 20px;
+    padding: 20px;
 }
 
-fieldset{
+fieldset {
     border-radius: 10px;
     box-shadow: 5px 5px 10px gray;
     background-color: rgb(220, 216, 232);
@@ -30,49 +31,68 @@ fieldset{
 }
 
 form input[type=text],
-form select{
+form select {
     width: 100%;
     margin: 10px 0;
     margin-bottom: 20px;
-    box-sizing: border-box;
     padding: 10px;
 }
 
-form input[type=radio]{
+form input[type=radio] {
     width: auto;
     margin: 10px;
 }
 
 form input[type=button],
-form [type=submit]{
+form input[type=submit] {
     background-color: #414770;
     border: none;
     border-radius: 10px;
     color: #fff;
     padding: 15px 40px;
     display: block;
-    margin: 20px auto 5px ;
+    margin: 20px auto 5px;
     font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#ticket{
+/* Button Hover Effect */
+form input[type=button]:hover,
+form input[type=submit]:hover {
+    background-color: #3a3f61;
+    transform: translateY(-5px);
+}
+
+/* Animated Button */
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+form input[type=button],
+form input[type=submit] {
+    animation: slideIn 0.5s ease-out;
+}
+
+#ticket {
     border: dashed 2px;
     width: 500px;
     text-align: center;
     margin: 20px auto;
-    padding: 10px 0px;
+    padding: 10px 0;
     line-height: 30px;
     background-color: #FFC857;
     color: black;
     margin-bottom: 30px;
 }
 
-footer{
+footer {
     width: 100%;
     text-align: center;
     color: white;
     background-color: #111;
-    padding: 5px 0px;
+    padding: 5px 0;
     bottom: 0;
     position: fixed;
 }
